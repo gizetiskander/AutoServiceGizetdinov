@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoServiceGizetdinov.Pages"
         mc:Ignorable="d"
-        Title="WelcomeWindow" Height="450" Width="800">
+        Title="WelcomeWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" >
     <Grid>
-        
+        <Image Source="\Pages\Resources\Background\BackgroundWelcome.jpg"/>
+
+        <StackPanel>
+            
+        </StackPanel>
     </Grid>
 </Window>
