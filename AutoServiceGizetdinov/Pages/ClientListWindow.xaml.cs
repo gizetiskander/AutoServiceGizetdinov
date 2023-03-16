@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AutoServiceGizetdinov.db;
 
 namespace AutoServiceGizetdinov.Pages
 {
@@ -19,9 +20,56 @@ namespace AutoServiceGizetdinov.Pages
     /// </summary>
     public partial class ClientListWindow : Window
     {
+        AutoServ_dbEntities dbEntities = new AutoServ_dbEntities();
         public ClientListWindow()
         {
             InitializeComponent();
+            ClientLst.ItemsSource = dbEntities.Client.ToList();
+        }
+
+        private void ClientLst_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void PagLeft_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PagRight_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CBNumberWrite_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void FilterCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void SortCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SearchTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

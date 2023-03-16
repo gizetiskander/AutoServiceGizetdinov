@@ -192,6 +192,7 @@
       <DependentUpon>AutoServDBModel.edmx</DependentUpon>
       <LastGenOutput>AutoServDBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Pages\Resources\Icon\picture.png" />
     <Resource Include="Pages\Resources\Background\BackgroundWelcome.jpg" />
   </ItemGroup>
   <ItemGroup>

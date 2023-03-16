@@ -5,8 +5,136 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoServiceGizetdinov.Pages"
         mc:Ignorable="d"
-        Title="ClientListWindow" Height="450" Width="800">
+        Title="ClientListWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
-        
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="1.5*"/>
+            <RowDefinition  Height="10*" />
+            <RowDefinition Height="1*"/>
+
+        </Grid.RowDefinitions>
+        <Image Source="\Pages\Resources\Background\BackgroundWelcome.jpg" Grid.ColumnSpan="3" Margin="0,-14,0,-14" Grid.RowSpan="3"/>
+        <TextBox x:Name="SearchTB" 
+                 TextWrapping="Wrap" TextChanged="SearchTB_TextChanged" 
+                 HorizontalAlignment="Left" VerticalAlignment="Center"
+                 Grid.Column="0"
+                 MinHeight="30" MinWidth="250" 
+                 Height="30" Width="367" FontFamily="Comic Sans MS"
+                 MaxHeight="120" MaxWidth="750" Margin="25,0,0,0" Background="Blue" Foreground="AliceBlue"/>
+
+        <ListView x:Name="ClientLst" Height="350" Width="750"
+                  Grid.Row="1" Grid.ColumnSpan="3" 
+                  Control.MouseDoubleClick="ClientLst_MouseDoubleClick" FontFamily="Gabriola" Background="Transparent" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1" Height="110" Width="750">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="100" Width="750" >
+
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" >
+                                <Image  Height="80" Width="80" Margin="15" x:Name="PictureI" IsEnabled="True">
+                                    <Image.Style>
+                                        <Style TargetType="{x:Type Image}">
+                                            <Setter Property="Source" Value="{Binding Picture}" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Picture}" Value="{x:Null}">
+                                                    <Setter Property="Source" Value="/Pages/Resources/Icon/picture.png" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                            </StackPanel>
+
+                            <StackPanel >
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding FirstName}" FontFamily="Comic Sans MS" FontSize="16" Foreground="AliceBlue"/>
+                                    <TextBlock Text="|" Foreground="AliceBlue"/>
+                                    <TextBlock Text="{Binding LastName}" FontFamily="Comic Sans MS" FontSize="16" Foreground="AliceBlue"/>
+                                    <TextBlock Text="|" Foreground="AliceBlue"/>
+                                    <TextBlock Text="{Binding Patronymic}" FontFamily="Comic Sans MS" FontSize="16" Foreground="AliceBlue"/>
+                                </StackPanel>
+
+
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Телефон:" FontFamily="Comic Sans MS" FontSize="16" Foreground="AliceBlue"/>
+                                    <TextBlock Margin="0,5,0,0" Text="{Binding Phone}" FontFamily="Comic Sans MS" FontSize="16" Foreground="AliceBlue" />
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="0,5,0,0" Text="{Binding Email}" FontFamily="Comic Sans MS" FontSize="16" Foreground="AliceBlue"/>
+                                </StackPanel>
+                            </StackPanel>
+
+
+
+                            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5">
+                                <TextBlock Margin="150,0,50,100" HorizontalAlignment="Right"  VerticalAlignment="Top" 
+                                           FontSize="16" Text="{Binding RegistrationDate}" Foreground="AliceBlue" FontFamily="Comic Sans MS"/>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Grid.Column="2" Grid.Row="2">
+            <Button x:Name="PagLeft" 
+                    Background="White" BorderBrush="White"
+                    MinWidth="25" MinHeight="25" Margin="0, 5, 0, 5"
+                    Click="PagLeft_Click" Content="&lt;"/>
+            <ScrollViewer MinHeight="40" MinWidth="100" Margin="0"
+                          ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                          ScrollViewer.VerticalScrollBarVisibility="Hidden" FontFamily="Comic Sans MS">
+                <WrapPanel x:Name="WPButtons"/>
+            </ScrollViewer>
+            <Button x:Name="PagRight" 
+                    Background="White" BorderBrush="White"
+                    Margin="0, 5, 0, 5" MinHeight="25" MinWidth="25"
+                    Click="PagRight_Click" Content="&gt;" />
+        </WrapPanel>
+
+
+        <ComboBox x:Name="CBNumberWrite" SelectedIndex="0" 
+                  SelectionChanged="CBNumberWrite_SelectionChanged" 
+                  HorizontalAlignment="Left" VerticalAlignment="Top" 
+                  Visibility="Hidden"/>
+
+
+
+        <ComboBox x:Name="FilterCB"  Grid.Column="2"
+                  SelectionChanged="FilterCB_SelectionChanged" FontFamily="Comic Sans MS"
+                  HorizontalAlignment="Center"  VerticalAlignment="Center" 
+                  MinHeight="20" MinWidth="180" Background="Blue" Foreground="AliceBlue">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Background="White" FontFamily="Comic Sans MS" x:Name="TypeProd_Name" Text="{Binding }"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+
+        </ComboBox>
+
+        <ComboBox x:Name="SortCB"  Grid.Column="1"
+                  HorizontalAlignment="Center"  VerticalAlignment="Center" FontFamily="Comic Sans MS" 
+                  MinHeight="20" MinWidth="180" Background="Blue" Foreground="AliceBlue" SelectionChanged="SortCB_SelectionChanged">
+            <TextBlock Text="По наименованию(возрастание)"/>
+            <TextBlock Text="По наименованию(убывание)"/>
+            <TextBlock Text="По минимальной стоимости(возрастание)"/>
+            <TextBlock Text="По минимальной стоимости(убывание)"/>
+            <TextBlock Text="По номеру производственного цеха(возрастание)"/>
+            <TextBlock Text="По номеру производственного цеха(убывание)"/>
+        </ComboBox>
+        <Button x:Name="AddBtn" Grid.Column="1" Content="Добавить агента" HorizontalAlignment="Left" Background="Blue" 
+                FontFamily="Comic Sans MS" Margin="45,0,0,0" Grid.Row="2" Foreground="AliceBlue" VerticalAlignment="Center" Width="163" Click="AddBtn_Click" Grid.ColumnSpan="2">
+        </Button>
+        <Button x:Name="UpdateBtn" Content="Обновить" HorizontalAlignment="Left" Background="Blue" FontFamily="Comic Sans MS" 
+                Margin="275,0,0,0" Grid.Row="2" Foreground="AliceBlue" VerticalAlignment="Center" Width="149"  Grid.ColumnSpan="2" Click="UpdateBtn_Click"/>
     </Grid>
 </Window>
