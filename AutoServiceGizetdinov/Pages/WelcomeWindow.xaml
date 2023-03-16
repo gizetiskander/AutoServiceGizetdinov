@@ -3,14 +3,42 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         xmlns:local="clr-namespace:AutoServiceGizetdinov.Pages"
         mc:Ignorable="d"
         Title="WelcomeWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" >
     <Grid>
         <Image Source="\Pages\Resources\Background\BackgroundWelcome.jpg"/>
 
-        <StackPanel>
-            
-        </StackPanel>
+        <materialDesign:Card Height="100" Background="Transparent" RenderTransformOrigin="0.23,0.18" Margin="155,59,190,291">
+            <StackPanel>
+                <TextBlock FontSize="18" FontWeight="Bold" Foreground="AliceBlue" FontFamily="Comic Sans MS" Style="{DynamicResource MaterialDesignTitleTextBlock}" 
+                           RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.198"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>Добро пожаловать в автомастерскую "Малышка"!</TextBlock>
+                <materialDesign:PackIcon Kind="Car" Foreground="Blue" Width="454" Height="78"/>
+            </StackPanel>
+        </materialDesign:Card>
+        <materialDesign:Card RenderTransformOrigin="0.23,0.18" Background="Transparent" Margin="128,193,162,161">
+            <StackPanel>
+                <TextBlock FontFamily="Comic Sans MS" Foreground="AliceBlue" FontSize="18" 
+                           Height="94"><Run Text="Данная программа предназначена для наших менеджеров,"/><LineBreak/><Run Text="которые смогут редактировать/добавлять и удалять"/><LineBreak/><Run Text="данные о клиентах, сотрудниках и т.д."/><LineBreak/><Run/></TextBlock>
+            </StackPanel>
+        </materialDesign:Card>
+        <Button x:Name="EntryBtn" Margin="301,325,335,93"  Content="Войти" 
+                Background="Blue" BorderBrush="White" Click="EntryBtn_Click" Height="Auto"></Button>
     </Grid>
 </Window>

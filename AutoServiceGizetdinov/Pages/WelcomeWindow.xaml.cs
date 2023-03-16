@@ -23,5 +23,12 @@ namespace AutoServiceGizetdinov.Pages
         {
             InitializeComponent();
         }
+
+        private void EntryBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClientListWindow clientListWindow = new ClientListWindow();
+            clientListWindow.Show();
+            this.Close();
+        }
     }
 }
