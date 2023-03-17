@@ -110,7 +110,7 @@ namespace AutoServiceGizetdinov.Pages
         private void ClientLst_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var insert = ClientLst.SelectedItem as Client;
-            ClientInsertWindow clientInsertWindow = new ClientInsertWindow();
+            ClientInsertWindow clientInsertWindow = new ClientInsertWindow(insert);
             clientInsertWindow.Show();
             this.Close();
         }

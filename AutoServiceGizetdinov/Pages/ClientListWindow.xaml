@@ -117,18 +117,17 @@
                     <TextBlock Background="Transparent" Foreground="Black" FontFamily="Comic Sans MS"  Text="{Binding Name}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
-
         </ComboBox>
 
         <ComboBox x:Name="SortCB"  Grid.Column="1"
                   HorizontalAlignment="Center"  VerticalAlignment="Center" FontFamily="Comic Sans MS" 
                   MinHeight="20" MinWidth="180" Background="Blue" Foreground="AliceBlue" SelectionChanged="SortCB_SelectionChanged">
-            <TextBlock Text="По наименованию(возрастание)"/>
-            <TextBlock Text="По наименованию(убывание)"/>
-            <TextBlock Text="По минимальной стоимости(возрастание)"/>
-            <TextBlock Text="По минимальной стоимости(убывание)"/>
-            <TextBlock Text="По номеру производственного цеха(возрастание)"/>
-            <TextBlock Text="По номеру производственного цеха(убывание)"/>
+            <TextBlock Text="По наименованию(возрастание)" Foreground="Black"/>
+            <TextBlock Text="По наименованию(убывание)" Foreground="Black"/>
+            <TextBlock Text="По минимальной стоимости(возрастание)" Foreground="Black"/>
+            <TextBlock Text="По минимальной стоимости(убывание)" Foreground="Black"/>
+            <TextBlock Text="По номеру производственного цеха(возрастание)" Foreground="Black"/>
+            <TextBlock Text="По номеру производственного цеха(убывание)" Foreground="Black"/>
         </ComboBox>
         <Button x:Name="AddBtn" Grid.Column="1" Content="Добавить агента" HorizontalAlignment="Left" Background="Blue" 
                 FontFamily="Comic Sans MS" Margin="45,0,0,0" Grid.Row="2" Foreground="AliceBlue" VerticalAlignment="Center" Width="163" Click="AddBtn_Click" Grid.ColumnSpan="2">

@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="ClientAddWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
-        <Calendar />
         <Image Source="\Pages\Resources\Background\BackgroundWelcome.jpg" Grid.ColumnSpan="3" Margin="0,-14,0,-14" Grid.RowSpan="3"/>
         <TextBox x:Name="FirstNameTB" HorizontalAlignment="Left" Margin="97,74,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
                  FontFamily="Comic Sans MS"  Background="Blue"/>
@@ -17,11 +16,13 @@
                  FontFamily="Comic Sans MS" Background="Blue"/>
         <TextBox x:Name="EmailTB" HorizontalAlignment="Left" Margin="232,73,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Comic Sans MS" 
                  Background="Blue"/>
+        <TextBox x:Name="PhoneTB" HorizontalAlignment="Left" Margin="232,109,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                 FontFamily="Comic Sans MS" Background="Blue"/>
         <ComboBox x:Name="GenderCB" HorizontalAlignment="Left" Margin="400,78,0,0"  VerticalAlignment="Top" Width="129" Height="25" FontFamily="Comic Sans MS"  
                   Background="Blue">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Background="Transparent" Foreground="AliceBlue" x:Name="AgentType"  Text="{Binding Name}" />
+                    <TextBlock Background="Transparent" Foreground="Black" x:Name="AgentType"  Text="{Binding Name}" />
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
@@ -41,8 +42,6 @@
             <Run Language="ru-ru" Text="Пол"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="400,101,0,0"  Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Comic Sans MS" >
             <Run Language="ru-ru" Text="Фото"/></TextBlock>
-        <TextBox x:Name="PhoneTB" HorizontalAlignment="Left" Margin="232,109,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
-                 FontFamily="Comic Sans MS" Background="Blue"/>
         <TextBlock HorizontalAlignment="Left" Margin="232,95,0,0" TextWrapping="Wrap"  Foreground="AliceBlue" VerticalAlignment="Top" FontFamily="Comic Sans MS" >
             <Run Language="ru-ru" Text="Телефон"/></TextBlock>
         <Image x:Name="playim" HorizontalAlignment="Left" Height="91" Margin="400,116,0,0" VerticalAlignment="Top"  Width="100" 

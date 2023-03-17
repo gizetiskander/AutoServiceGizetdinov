@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoServiceGizetdinov.Pages"
         mc:Ignorable="d"
-        Title="ClientInsertWindow" Height="450" Width="800">
+        Title="ClientInsertWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
-        
+        <Image Source="\Pages\Resources\Background\BackgroundWelcome.jpg" Grid.ColumnSpan="3" Margin="0,-14,0,-14" Grid.RowSpan="3"/>
+        <TextBox x:Name="FirstNameTB" HorizontalAlignment="Left" Margin="97,74,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                 FontFamily="Comic Sans MS"  Background="Blue"/>
+        <TextBox x:Name="LastNameTB" HorizontalAlignment="Left" Margin="97,110,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                 FontFamily="Comic Sans MS" Background="Blue"/>
+        <TextBox x:Name="PatronymicTB" HorizontalAlignment="Left" Margin="97,152,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                 FontFamily="Comic Sans MS" Background="Blue"/>
+        <TextBox x:Name="EmailTB" HorizontalAlignment="Left" Margin="232,73,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Comic Sans MS" 
+                 Background="Blue"/>
+        <TextBox x:Name="PhoneTB" HorizontalAlignment="Left" Margin="232,109,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                 FontFamily="Comic Sans MS" Background="Blue"/>
+        <TextBlock HorizontalAlignment="Left" Foreground="AliceBlue" Margin="97,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Comic Sans MS" Width="120" 
+                   Text="Фамилия" />
+        <TextBlock HorizontalAlignment="Left"  Foreground="AliceBlue" Margin="97,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Comic Sans MS" >
+            <Run Language="ru-ru" Text="Имя"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="97,135,0,0"  Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Comic Sans MS" >
+            <Run Language="ru-ru" Text="Отчество"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="232,58,0,0"  Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Century Gothic" >
+            <Run Language="ru-ru" Text="Почта"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="232,95,0,0" TextWrapping="Wrap"  Foreground="AliceBlue" VerticalAlignment="Top" FontFamily="Comic Sans MS" >
+            <Run Language="ru-ru" Text="Телефон"/></TextBlock>
+        <Button x:Name="SaveBtn" Content="Сохранить" HorizontalAlignment="Left" Background="Blue" FontFamily="Comic Sans MS" Margin="109,230,0,0" 
+                Foreground="AliceBlue" VerticalAlignment="Top" Width="114" Click="SaveBtn_Click"/>
+        <Button x:Name="BackBtn" Content="Выйти" HorizontalAlignment="Left" Background="Blue" FontFamily="Comic Sans MS" Margin="170,267,0,0" 
+                Foreground="AliceBlue" VerticalAlignment="Top" Width="114" Click="BackBtn_Click"/>
+        <TextBox x:Name="IDTB" HorizontalAlignment="Left" Margin="164,26,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+            FontFamily="Comic Sans MS"  Background="Blue"/>
+        <TextBlock HorizontalAlignment="Left" Foreground="AliceBlue" Margin="164,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Comic Sans MS" Width="120" 
+            Text="Код" />
+        <Button x:Name="DelBtn" Content="Удалить" HorizontalAlignment="Left" Background="Blue" FontFamily="Comic Sans MS" Margin="228,230,0,0" 
+            Foreground="AliceBlue" VerticalAlignment="Top" Width="114" Click="DelBtn_Click"/>
     </Grid>
 </Window>
