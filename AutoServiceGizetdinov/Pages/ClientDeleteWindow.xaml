@@ -5,8 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoServiceGizetdinov.Pages"
         mc:Ignorable="d"
-        Title="ClientDeleteWindow" Height="450" Width="800">
+        Title="ClientDeleteWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
-        
+        <Image Source="\Pages\Resources\Background\BackgroundWelcome.jpg" Grid.ColumnSpan="3" Margin="0,-14,0,-14" Grid.RowSpan="3"/>
+        <ListView x:Name="ClientLst" Height="350" Width="750" 
+            MouseDoubleClick="ClientLst_MouseDoubleClick" FontFamily="Gabriola" Background="Transparent" Margin="25,50,25,34" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1" Height="110" Width="750">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="100" Width="750" >
+
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" >
+                                <Image  Height="80" Width="80" Margin="15" x:Name="PictureI" IsEnabled="True">
+                                    <Image.Style>
+                                        <Style TargetType="{x:Type Image}">
+                                            <Setter Property="Source" Value="{Binding Picture}" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Picture}" Value="{x:Null}">
+                                                    <Setter Property="Source" Value="/Pages/Resources/Icon/picture.png" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                            </StackPanel>
+
+                            <StackPanel >
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding FirstName}" FontFamily="Comic Sans MS" FontSize="16" Foreground="AliceBlue"/>
+                                    <TextBlock Text="|" Foreground="AliceBlue"/>
+                                    <TextBlock Text="{Binding LastName}" FontFamily="Comic Sans MS" FontSize="16" Foreground="AliceBlue"/>
+                                    <TextBlock Text="|" Foreground="AliceBlue"/>
+                                    <TextBlock Text="{Binding Patronymic}" FontFamily="Comic Sans MS" FontSize="16" Foreground="AliceBlue"/>
+                                </StackPanel>
+
+
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Телефон:" FontFamily="Comic Sans MS" FontSize="16" Foreground="AliceBlue"/>
+                                    <TextBlock Margin="0,5,0,0" Text="{Binding Phone}" FontFamily="Comic Sans MS" FontSize="16" Foreground="AliceBlue" />
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="0,5,0,0" Text="{Binding Email}" FontFamily="Comic Sans MS" FontSize="16" Foreground="AliceBlue"/>
+                                </StackPanel>
+                            </StackPanel>
+
+
+
+                            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5">
+                                <TextBlock Margin="150,0,50,100" HorizontalAlignment="Right"  VerticalAlignment="Top" 
+                                    FontSize="16" Text="{Binding RegistrationDate}" Foreground="AliceBlue" FontFamily="Comic Sans MS"/>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="DelBtn" Content="Удалить" HorizontalAlignment="Left" Background="Blue" FontFamily="Comic Sans MS" 
+            Margin="462,413,0,0" Foreground="AliceBlue" VerticalAlignment="Top" Width="149" Click="DelBtn_Click"/>
+        <Button x:Name="BackBtn" Content="Выйти" HorizontalAlignment="Left" Background="Blue" FontFamily="Comic Sans MS" 
+            Margin="626,413,0,0" Foreground="AliceBlue" VerticalAlignment="Top" Width="149" Click="BackBtn_Click"/>
+
     </Grid>
 </Window>
