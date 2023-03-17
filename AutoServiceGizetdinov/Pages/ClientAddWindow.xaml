@@ -5,8 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoServiceGizetdinov.Pages"
         mc:Ignorable="d"
-        Title="ClientAddWindow" Height="450" Width="800">
+        Title="ClientAddWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
-        
+        <Calendar />
+        <Image Source="\Pages\Resources\Background\BackgroundWelcome.jpg" Grid.ColumnSpan="3" Margin="0,-14,0,-14" Grid.RowSpan="3"/>
+        <TextBox x:Name="FirstNameTB" HorizontalAlignment="Left" Margin="97,74,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                 FontFamily="Comic Sans MS"  Background="Blue"/>
+        <TextBox x:Name="LastNameTB" HorizontalAlignment="Left" Margin="97,110,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                 FontFamily="Comic Sans MS" Background="Blue"/>
+        <TextBox x:Name="PatronymicTB" HorizontalAlignment="Left" Margin="97,152,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                 FontFamily="Comic Sans MS" Background="Blue"/>
+        <TextBox x:Name="EmailTB" HorizontalAlignment="Left" Margin="232,73,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Comic Sans MS" 
+                 Background="Blue"/>
+        <ComboBox x:Name="GenderCB" HorizontalAlignment="Left" Margin="400,78,0,0"  VerticalAlignment="Top" Width="129" Height="25" FontFamily="Comic Sans MS"  
+                  Background="Blue">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Background="Transparent" Foreground="AliceBlue" x:Name="AgentType"  Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Foreground="AliceBlue" Margin="97,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Comic Sans MS" Width="120" 
+                   Text="Фамилия" />
+        <TextBlock HorizontalAlignment="Left"  Foreground="AliceBlue" Margin="97,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Comic Sans MS" >
+            <Run Language="ru-ru" Text="Имя"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="97,135,0,0"  Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Comic Sans MS" >
+            <Run Language="ru-ru" Text="Отчество"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="688,61,0,0"  Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Comic Sans MS" >
+            <Run Language="ru-ru" Text="Дата рождения"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="565,61,0,0"  Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Comic Sans MS" >
+            <Run Language="ru-ru" Text="Дата регистрации"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="232,58,0,0"  Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Century Gothic" >
+            <Run Language="ru-ru" Text="Почта"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="400,63,0,0"  Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Comic Sans MS" >
+            <Run Language="ru-ru" Text="Пол"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="400,101,0,0"  Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Comic Sans MS" >
+            <Run Language="ru-ru" Text="Фото"/></TextBlock>
+        <TextBox x:Name="PhoneTB" HorizontalAlignment="Left" Margin="232,109,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                 FontFamily="Comic Sans MS" Background="Blue"/>
+        <TextBlock HorizontalAlignment="Left" Margin="232,95,0,0" TextWrapping="Wrap"  Foreground="AliceBlue" VerticalAlignment="Top" FontFamily="Comic Sans MS" >
+            <Run Language="ru-ru" Text="Телефон"/></TextBlock>
+        <Image x:Name="playim" HorizontalAlignment="Left" Height="91" Margin="400,116,0,0" VerticalAlignment="Top"  Width="100" 
+               RenderTransformOrigin="0.84,0.515" />
+        <Button x:Name="ImgBtn" Content="Добавить фото" HorizontalAlignment="Left" Background="Blue" FontFamily="Comic Sans MS" Margin="400,214,0,0" 
+                Foreground="AliceBlue" VerticalAlignment="Top" Width="143" Click="ImgBtn_Click"/>
+        <Button x:Name="DelImgBtn" Content="Удалить фото" HorizontalAlignment="Left" Background="Blue" FontFamily="Comic Sans MS" Margin="402,251,0,0" 
+                Foreground="AliceBlue" VerticalAlignment="Top" Width="141" Click="DelImgBtn_Click"/>
+        <Button x:Name="SaveBtn" Content="Сохранить" HorizontalAlignment="Left" Background="Blue" FontFamily="Comic Sans MS" Margin="170,230,0,0" 
+                Foreground="AliceBlue" VerticalAlignment="Top" Width="114" Click="SaveBtn_Click"/>
+        <Button x:Name="BackBtn" Content="Выйти" HorizontalAlignment="Left" Background="Blue" FontFamily="Comic Sans MS" Margin="170,267,0,0" 
+                Foreground="AliceBlue" VerticalAlignment="Top" Width="114" Click="BackBtn_Click"/>
+        <DatePicker x:Name="RegDateDP"  HorizontalAlignment="Left" Margin="565,83,0,0" VerticalAlignment="Top" Foreground="Blue" Width="112"/>
+        <DatePicker x:Name="BirthDateDP" HorizontalAlignment="Left" Margin="688,83,0,0" VerticalAlignment="Top" Foreground="Blue" Width="87"/>
+
     </Grid>
 </Window>
