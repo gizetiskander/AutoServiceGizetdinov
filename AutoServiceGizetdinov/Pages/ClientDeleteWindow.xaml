@@ -9,7 +9,7 @@
     <Grid>
         <Image Source="\Pages\Resources\Background\BackgroundWelcome.jpg" Grid.ColumnSpan="3" Margin="0,-14,0,-14" Grid.RowSpan="3"/>
         <ListView x:Name="ClientLst" Height="350" Width="750" 
-            MouseDoubleClick="ClientLst_MouseDoubleClick" FontFamily="Gabriola" Background="Transparent" Margin="25,50,25,34" >
+             FontFamily="Gabriola" Background="Transparent" Margin="25,50,25,34" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="1" Height="110" Width="750">

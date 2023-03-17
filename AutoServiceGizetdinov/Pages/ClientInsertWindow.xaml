@@ -32,7 +32,7 @@
                 Foreground="AliceBlue" VerticalAlignment="Top" Width="114" Click="SaveBtn_Click"/>
         <Button x:Name="BackBtn" Content="Выйти" HorizontalAlignment="Left" Background="Blue" FontFamily="Comic Sans MS" Margin="170,267,0,0" 
                 Foreground="AliceBlue" VerticalAlignment="Top" Width="114" Click="BackBtn_Click"/>
-        <TextBox x:Name="IDTB" HorizontalAlignment="Left" Margin="164,26,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+        <TextBox x:Name="IDTB" HorizontalAlignment="Left" Margin="164,26,0,0" Foreground="AliceBlue" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"
             FontFamily="Comic Sans MS"  Background="Blue"/>
         <TextBlock HorizontalAlignment="Left" Foreground="AliceBlue" Margin="164,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Comic Sans MS" Width="120" 
             Text="Код" />

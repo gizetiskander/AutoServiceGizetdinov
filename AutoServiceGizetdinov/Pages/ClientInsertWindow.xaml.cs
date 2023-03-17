@@ -26,6 +26,7 @@ namespace AutoServiceGizetdinov.Pages
         {
             InitializeComponent();
             this.client = clients;
+            ClientFill();
 
         }
 
