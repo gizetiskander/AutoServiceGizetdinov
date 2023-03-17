@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2a8b0af91f6444269f18f24ac229683c" Name="Diagram1">
+        <EntityTypeShape EntityType="CrashAuto_dbModel.Client" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrashAuto_dbModel.ClientService" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrashAuto_dbModel.CrashAuto_db" Width="1.5" PointX="5.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrashAuto_dbModel.DocumentByService" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrashAuto_dbModel.Gender" Width="1.5" PointX="1.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrashAuto_dbModel.Manufacturer" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrashAuto_dbModel.Product" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrashAuto_dbModel.ProductPhoto" Width="1.5" PointX="5.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrashAuto_dbModel.ProductSale" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrashAuto_dbModel.Service" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrashAuto_dbModel.ServicePhoto" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrashAuto_dbModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrashAuto_dbModel.Tag" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="CrashAuto_dbModel.FK_Client_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="CrashAuto_dbModel.FK_ClientService_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="CrashAuto_dbModel.FK_ClientService_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="CrashAuto_dbModel.FK_DocumentByService_ClientService" ManuallyRouted="false" />
+        <AssociationConnector Association="CrashAuto_dbModel.FK_ProductSale_ClientService" ManuallyRouted="false" />
+        <AssociationConnector Association="CrashAuto_dbModel.FK_Product_Manufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="CrashAuto_dbModel.FK_ProductPhoto_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CrashAuto_dbModel.FK_ProductSale_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CrashAuto_dbModel.FK_ServicePhoto_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="CrashAuto_dbModel.TagOfClient" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

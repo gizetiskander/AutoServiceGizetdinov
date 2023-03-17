@@ -13,10 +13,10 @@ namespace AutoServiceGizetdinov.db
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AutoServ_dbEntities : DbContext
+    public partial class CrashAuto_dbEntities : DbContext
     {
-        public AutoServ_dbEntities()
-            : base("name=AutoServ_dbEntities")
+        public CrashAuto_dbEntities()
+            : base("name=CrashAuto_dbEntities")
         {
         }
     
@@ -27,6 +27,7 @@ namespace AutoServiceGizetdinov.db
     
         public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet<ClientService> ClientService { get; set; }
+        public virtual DbSet<CrashAuto_db> CrashAuto_db { get; set; }
         public virtual DbSet<DocumentByService> DocumentByService { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<Manufacturer> Manufacturer { get; set; }

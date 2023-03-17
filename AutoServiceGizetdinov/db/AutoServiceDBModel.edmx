@@ -4,15 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище AutoServ_dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="AttachedProduct">
-          <Key>
-            <PropertyRef Name="MainProductID" />
-            <PropertyRef Name="AttachedProductID" />
-          </Key>
-          <Property Name="MainProductID" Type="int" Nullable="false" />
-          <Property Name="AttachedProductID" Type="int" Nullable="false" />
-        </EntityType>
+      <Schema Namespace="Хранилище CrashAuto_dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Client">
           <Key>
             <PropertyRef Name="ID" />
@@ -37,6 +29,14 @@
           <Property Name="ServiceID" Type="int" Nullable="false" />
           <Property Name="StartTime" Type="datetime" Nullable="false" />
           <Property Name="Comment" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="CrashAuto_db">
+          <Key>
+            <PropertyRef Name="MainProductID" />
+            <PropertyRef Name="AttachedProductID" />
+          </Key>
+          <Property Name="MainProductID" Type="int" Nullable="false" />
+          <Property Name="AttachedProductID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DocumentByService">
           <Key>
@@ -137,30 +137,6 @@
           <Property Name="ClientID" Type="int" Nullable="false" />
           <Property Name="TagID" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK_AttachedProduct_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
-          <End Role="AttachedProduct" Type="Self.AttachedProduct" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="AttachedProduct">
-              <PropertyRef Name="MainProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AttachedProduct_Product1">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
-          <End Role="AttachedProduct" Type="Self.AttachedProduct" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="AttachedProduct">
-              <PropertyRef Name="AttachedProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Client_Gender">
           <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
@@ -293,10 +269,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище AutoServ_dbModelContainer">
-          <EntitySet Name="AttachedProduct" EntityType="Self.AttachedProduct" Schema="dbo" store:Type="Tables" />
+        <EntityContainer Name="Хранилище CrashAuto_dbModelContainer">
           <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ClientService" EntityType="Self.ClientService" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CrashAuto_db" EntityType="Self.CrashAuto_db" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DocumentByService" EntityType="Self.DocumentByService" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" Schema="dbo" store:Type="Tables" />
@@ -308,14 +284,6 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TagOfClient" EntityType="Self.TagOfClient" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_AttachedProduct_Product" Association="Self.FK_AttachedProduct_Product">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="AttachedProduct" EntitySet="AttachedProduct" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AttachedProduct_Product1" Association="Self.FK_AttachedProduct_Product1">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="AttachedProduct" EntitySet="AttachedProduct" />
-          </AssociationSet>
           <AssociationSet Name="FK_Client_Gender" Association="Self.FK_Client_Gender">
             <End Role="Gender" EntitySet="Gender" />
             <End Role="Client" EntitySet="Client" />
@@ -365,7 +333,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="AutoServ_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="CrashAuto_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Client">
           <Key>
             <PropertyRef Name="ID" />
@@ -397,6 +365,14 @@
           <NavigationProperty Name="Service" Relationship="Self.FK_ClientService_Service" FromRole="ClientService" ToRole="Service" />
           <NavigationProperty Name="DocumentByService" Relationship="Self.FK_DocumentByService_ClientService" FromRole="ClientService" ToRole="DocumentByService" />
           <NavigationProperty Name="ProductSale" Relationship="Self.FK_ProductSale_ClientService" FromRole="ClientService" ToRole="ProductSale" />
+        </EntityType>
+        <EntityType Name="CrashAuto_db">
+          <Key>
+            <PropertyRef Name="MainProductID" />
+            <PropertyRef Name="AttachedProductID" />
+          </Key>
+          <Property Name="MainProductID" Type="Int32" Nullable="false" />
+          <Property Name="AttachedProductID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="DocumentByService">
           <Key>
@@ -438,8 +414,6 @@
           <NavigationProperty Name="Manufacturer" Relationship="Self.FK_Product_Manufacturer" FromRole="Product" ToRole="Manufacturer" />
           <NavigationProperty Name="ProductPhoto" Relationship="Self.FK_ProductPhoto_Product" FromRole="Product" ToRole="ProductPhoto" />
           <NavigationProperty Name="ProductSale" Relationship="Self.FK_ProductSale_Product" FromRole="Product" ToRole="ProductSale" />
-          <NavigationProperty Name="Product1" Relationship="Self.AttachedProduct" FromRole="Product" ToRole="Product1" />
-          <NavigationProperty Name="Product2" Relationship="Self.AttachedProduct" FromRole="Product1" ToRole="Product" />
         </EntityType>
         <EntityType Name="ProductPhoto">
           <Key>
@@ -612,17 +586,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="AttachedProduct">
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
-          <End Role="Product1" Type="Self.Product" Multiplicity="*" />
-        </Association>
         <Association Name="TagOfClient">
           <End Role="Client" Type="Self.Client" Multiplicity="*" />
           <End Role="Tag" Type="Self.Tag" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="AutoServ_dbEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CrashAuto_dbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="ClientService" EntityType="Self.ClientService" />
+          <EntitySet Name="CrashAuto_db" EntityType="Self.CrashAuto_db" />
           <EntitySet Name="DocumentByService" EntityType="Self.DocumentByService" />
           <EntitySet Name="Gender" EntityType="Self.Gender" />
           <EntitySet Name="Manufacturer" EntityType="Self.Manufacturer" />
@@ -669,10 +640,6 @@
             <End Role="Service" EntitySet="Service" />
             <End Role="ServicePhoto" EntitySet="ServicePhoto" />
           </AssociationSet>
-          <AssociationSet Name="AttachedProduct" Association="Self.AttachedProduct">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="Product1" EntitySet="Product" />
-          </AssociationSet>
           <AssociationSet Name="TagOfClient" Association="Self.TagOfClient">
             <End Role="Client" EntitySet="Client" />
             <End Role="Tag" EntitySet="Tag" />
@@ -683,9 +650,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище AutoServ_dbModelContainer" CdmEntityContainer="AutoServ_dbEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище CrashAuto_dbModelContainer" CdmEntityContainer="CrashAuto_dbEntities">
           <EntitySetMapping Name="Client">
-            <EntityTypeMapping TypeName="AutoServ_dbModel.Client">
+            <EntityTypeMapping TypeName="CrashAuto_dbModel.Client">
               <MappingFragment StoreEntitySet="Client">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -701,7 +668,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ClientService">
-            <EntityTypeMapping TypeName="AutoServ_dbModel.ClientService">
+            <EntityTypeMapping TypeName="CrashAuto_dbModel.ClientService">
               <MappingFragment StoreEntitySet="ClientService">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ClientID" ColumnName="ClientID" />
@@ -711,8 +678,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CrashAuto_db">
+            <EntityTypeMapping TypeName="CrashAuto_dbModel.CrashAuto_db">
+              <MappingFragment StoreEntitySet="CrashAuto_db">
+                <ScalarProperty Name="MainProductID" ColumnName="MainProductID" />
+                <ScalarProperty Name="AttachedProductID" ColumnName="AttachedProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="DocumentByService">
-            <EntityTypeMapping TypeName="AutoServ_dbModel.DocumentByService">
+            <EntityTypeMapping TypeName="CrashAuto_dbModel.DocumentByService">
               <MappingFragment StoreEntitySet="DocumentByService">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ClientServiceID" ColumnName="ClientServiceID" />
@@ -721,7 +696,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Gender">
-            <EntityTypeMapping TypeName="AutoServ_dbModel.Gender">
+            <EntityTypeMapping TypeName="CrashAuto_dbModel.Gender">
               <MappingFragment StoreEntitySet="Gender">
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -729,7 +704,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Manufacturer">
-            <EntityTypeMapping TypeName="AutoServ_dbModel.Manufacturer">
+            <EntityTypeMapping TypeName="CrashAuto_dbModel.Manufacturer">
               <MappingFragment StoreEntitySet="Manufacturer">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -738,7 +713,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Product">
-            <EntityTypeMapping TypeName="AutoServ_dbModel.Product">
+            <EntityTypeMapping TypeName="CrashAuto_dbModel.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -751,7 +726,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductPhoto">
-            <EntityTypeMapping TypeName="AutoServ_dbModel.ProductPhoto">
+            <EntityTypeMapping TypeName="CrashAuto_dbModel.ProductPhoto">
               <MappingFragment StoreEntitySet="ProductPhoto">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -760,7 +735,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductSale">
-            <EntityTypeMapping TypeName="AutoServ_dbModel.ProductSale">
+            <EntityTypeMapping TypeName="CrashAuto_dbModel.ProductSale">
               <MappingFragment StoreEntitySet="ProductSale">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
@@ -771,7 +746,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Service">
-            <EntityTypeMapping TypeName="AutoServ_dbModel.Service">
+            <EntityTypeMapping TypeName="CrashAuto_dbModel.Service">
               <MappingFragment StoreEntitySet="Service">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -784,7 +759,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ServicePhoto">
-            <EntityTypeMapping TypeName="AutoServ_dbModel.ServicePhoto">
+            <EntityTypeMapping TypeName="CrashAuto_dbModel.ServicePhoto">
               <MappingFragment StoreEntitySet="ServicePhoto">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
@@ -793,7 +768,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="AutoServ_dbModel.sysdiagrams">
+            <EntityTypeMapping TypeName="CrashAuto_dbModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -804,7 +779,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tag">
-            <EntityTypeMapping TypeName="AutoServ_dbModel.Tag">
+            <EntityTypeMapping TypeName="CrashAuto_dbModel.Tag">
               <MappingFragment StoreEntitySet="Tag">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -812,15 +787,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="AttachedProduct" TypeName="AutoServ_dbModel.AttachedProduct" StoreEntitySet="AttachedProduct">
-            <EndProperty Name="Product">
-              <ScalarProperty Name="ID" ColumnName="MainProductID" />
-            </EndProperty>
-            <EndProperty Name="Product1">
-              <ScalarProperty Name="ID" ColumnName="AttachedProductID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="TagOfClient" TypeName="AutoServ_dbModel.TagOfClient" StoreEntitySet="TagOfClient">
+          <AssociationSetMapping Name="TagOfClient" TypeName="CrashAuto_dbModel.TagOfClient" StoreEntitySet="TagOfClient">
             <EndProperty Name="Client">
               <ScalarProperty Name="ID" ColumnName="ClientID" />
             </EndProperty>

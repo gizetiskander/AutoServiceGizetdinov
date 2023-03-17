@@ -81,56 +81,59 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="db\AutoServDBModel.Context.cs">
+    <Compile Include="db\AutoServiceDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AutoServDBModel.Context.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="db\AutoServDBModel.cs">
+    <Compile Include="db\AutoServiceDBModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AutoServDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="db\AutoServDBModel.Designer.cs">
+    <Compile Include="db\AutoServiceDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AutoServDBModel.edmx</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="db\Client.cs">
-      <DependentUpon>AutoServDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\ClientService.cs">
-      <DependentUpon>AutoServDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\CrashAuto_db.cs">
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\DocumentByService.cs">
-      <DependentUpon>AutoServDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Gender.cs">
-      <DependentUpon>AutoServDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Manufacturer.cs">
-      <DependentUpon>AutoServDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Product.cs">
-      <DependentUpon>AutoServDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\ProductPhoto.cs">
-      <DependentUpon>AutoServDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\ProductSale.cs">
-      <DependentUpon>AutoServDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Service.cs">
-      <DependentUpon>AutoServDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\ServicePhoto.cs">
-      <DependentUpon>AutoServDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\sysdiagrams.cs">
-      <DependentUpon>AutoServDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Tag.cs">
-      <DependentUpon>AutoServDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Pages\ClientAddWindow.xaml.cs">
       <DependentUpon>ClientAddWindow.xaml</DependentUpon>
@@ -164,12 +167,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="db\AutoServDBModel.edmx">
+    <EntityDeploy Include="db\AutoServiceDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AutoServDBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>AutoServiceDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="db\AutoServDBModel.edmx.diagram">
-      <DependentUpon>AutoServDBModel.edmx</DependentUpon>
+    <None Include="db\AutoServiceDBModel.edmx.diagram">
+      <DependentUpon>AutoServiceDBModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -180,18 +183,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="db\AutoServDBModel.Context.tt">
+    <Content Include="db\AutoServiceDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AutoServDBModel.Context.cs</LastGenOutput>
-      <DependentUpon>AutoServDBModel.edmx</DependentUpon>
+      <DependentUpon>AutoServiceDBModel.edmx</DependentUpon>
+      <LastGenOutput>AutoServiceDBModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="db\AutoServDBModel.tt">
+    <Content Include="db\AutoServiceDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AutoServDBModel.edmx</DependentUpon>
-      <LastGenOutput>AutoServDBModel.cs</LastGenOutput>
+      <DependentUpon>AutoServiceDBModel.edmx</DependentUpon>
+      <LastGenOutput>AutoServiceDBModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Pages\Resources\Icon\picture.png" />
     <Resource Include="Pages\Resources\Background\BackgroundWelcome.jpg" />
   </ItemGroup>
