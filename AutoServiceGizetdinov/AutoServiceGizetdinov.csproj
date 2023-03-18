@@ -52,7 +52,9 @@
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
@@ -81,59 +83,59 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="db\AutoServiceDBModel.Context.cs">
+    <Compile Include="db\AutoServDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AutoServiceDBModel.Context.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="db\AutoServiceDBModel.cs">
+    <Compile Include="db\AutoServDBModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="db\AutoServiceDBModel.Designer.cs">
+    <Compile Include="db\AutoServDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AutoServiceDBModel.edmx</DependentUpon>
+      <DependentUpon>AutoServDBModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="db\Client.cs">
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\ClientService.cs">
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\CrashAuto_db.cs">
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\DocumentByService.cs">
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Gender.cs">
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Manufacturer.cs">
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Product.cs">
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\ProductPhoto.cs">
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\ProductSale.cs">
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Service.cs">
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\ServicePhoto.cs">
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\sysdiagrams.cs">
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Tag.cs">
-      <DependentUpon>AutoServiceDBModel.tt</DependentUpon>
+      <DependentUpon>AutoServDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Pages\ClientAddWindow.xaml.cs">
       <DependentUpon>ClientAddWindow.xaml</DependentUpon>
@@ -167,12 +169,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="db\AutoServiceDBModel.edmx">
+    <EntityDeploy Include="db\AutoServDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AutoServiceDBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>AutoServDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="db\AutoServiceDBModel.edmx.diagram">
-      <DependentUpon>AutoServiceDBModel.edmx</DependentUpon>
+    <None Include="db\AutoServDBModel.edmx.diagram">
+      <DependentUpon>AutoServDBModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -182,18 +184,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="db\AutoServiceDBModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AutoServiceDBModel.edmx</DependentUpon>
-      <LastGenOutput>AutoServiceDBModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="db\AutoServiceDBModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AutoServiceDBModel.edmx</DependentUpon>
-      <LastGenOutput>AutoServiceDBModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pages\Resources\Icon\picture.png" />
@@ -223,6 +213,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="db\AutoServDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AutoServDBModel.edmx</DependentUpon>
+      <LastGenOutput>AutoServDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="db\AutoServDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AutoServDBModel.edmx</DependentUpon>
+      <LastGenOutput>AutoServDBModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets')" />

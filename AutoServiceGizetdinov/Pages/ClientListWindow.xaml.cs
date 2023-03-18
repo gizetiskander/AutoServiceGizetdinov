@@ -26,6 +26,7 @@ namespace AutoServiceGizetdinov.Pages
         {
             InitializeComponent();
 
+            dbEntities.SaveChanges();
             RefreshComboBox();
             RefreshButtons();
             ClientLst.ItemsSource = dbEntities.Client.ToList();

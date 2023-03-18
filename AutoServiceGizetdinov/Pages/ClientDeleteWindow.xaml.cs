@@ -24,6 +24,7 @@ namespace AutoServiceGizetdinov.Pages
         public ClientDeleteWindow()
         {
             InitializeComponent();
+            dbEntities.SaveChanges();
             ClientLst.ItemsSource = dbEntities.Client.ToList();
         }
 
